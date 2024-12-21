@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>bob</title>
+		<meta name="description" content="A fantastically mizpelled tale of a mna named bob bob">
+		<link rel="alternate" href="feed/feed.xml" type="application/atom+xml" title="blog.dunce.party">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+/* This is an arbitrary CSS string added to the bundle */
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #C0C0C0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: #5f2b48;
+	--text-color-link-visited: #17050F;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #C0C0C0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+@view-transition {
+	navigation: auto;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	max-width: 40em;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+/* Fluid images via https://www.zachleat.com/web/fluid-images/ */
+img {
+  max-width: 100%;
+}
+img[width][height] {
+  height: auto;
+}
+img[src$=".svg"] {
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main,
+footer {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	display: flex;
+	justify-content: space-between;
+	gap: .5em 1em;
+	list-style: "";
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+.links-nextprev > * {
+	flex-grow: 1;
+}
+.links-nextprev-next {
+	text-align: right;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: .5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	overflow-x: auto;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	gap: 1em .5em;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: 1em;
+}
+.home-link {
+	font-size: 1em; /* 16px /16 */
+	font-weight: 700;
+	margin-right: 2em;
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}</style>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/eleventy-base-blog/" class="home-link">blog.dunce.party</a>
+			<nav>
+				<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item"><a href="/eleventy-base-blog/">Home</a></li>
+					<li class="nav-item"><a href="/eleventy-base-blog/blog/">Archive</a></li>
+					<li class="nav-item"><a href="/eleventy-base-blog/about/">About</a></li>
+					<li class="nav-item"><a href="/eleventy-base-blog/feed/feed.xml">Feed</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="skip">
+			<heading-anchors>
+				
+<h1 id="bob">bob</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2024-12-21">21 December 2024</time></li>
+	<li><a href="/eleventy-base-blog/tags/bob/" class="post-tag">bob</a>, </li>
+	<li><a href="/eleventy-base-blog/tags/story/" class="post-tag">story</a>, </li>
+	<li><a href="/eleventy-base-blog/tags/writing/" class="post-tag">writing</a>, </li>
+	<li><a href="/eleventy-base-blog/tags/shortstory/" class="post-tag">shortstory</a>, </li>
+	<li><a href="/eleventy-base-blog/tags/peakhumor/" class="post-tag">peakhumor</a>, </li>
+	<li><a href="/eleventy-base-blog/tags/tasteless/" class="post-tag">tasteless</a></li>
+</ul>
+
+<h1 id="bob-1">bob 1</h1>
+<p>A fantastically mizpelled tale of a mna named bob bob
+“Amazingly bad” - Budget books
+“Horrid plot” - The Guardian
+“No pacing” - rush limbaugh</p>
+<h2 id="chapter-1">Chapter 1</h2>
+<p>Once upon time there was a mna named bob bob liked cats and dogs but accidentally he fellinto the gfameouse parise catacombs  and was stuck there and bob thought that all the skulls were scary but he could use the bones as chew toys for his dog so he got out his kitchenaid mixer and his big metal wok and made human bone stew and was cooking and cooked all the evil  skeletioens that tried to kikl him but then the bih boss apeared and bob got scxared and ran but the boss was fast so he tried to turn corners to lose him but the boss’ smellinng was good and the italian mafia was after him and he was panicking and the wall seemed t o get asmeannelers and the ground got slippery and the roof was caving and the bones started rattling and bob woke up in his bed and everything was fine until a tidal wave of curry came and washed bob and his house away but bob was good at cooking so he made a batch of rice and solved world hunger but then a tidal wave of dr pepsi came and caffeinated bob and his dog and his 2 cats and his rat and his mouse(differemt thing) and his 5 prized collector coca cola bottles and his half a dozen gold dubloons but bob was an engineer so he nuked the dr pepsi headquarters and everything was fine and bob was happily ever after but then the hasbulla nft took over the internet and so bob nuked the hasbulla nft headquarters but there were too many ai generated monkey nfts so bob was defeated but then bob woke up from his dream and nuked dr pepsi but then dr pepsi himself shoves a funnel into bob mouth and force feeds him 1 cubic mile of dr pepsi and bob black outs but the crack fuels him and you me gas station but then bob is dinosaur and wegide bob is yes why but whbeh the ideals are sbut bog is bogi but the amogus is itaalina mafia is bob mexico and the bob dino did 360 backflip noscope but dr pepsi was too fast and bob was dead but then the magical bob chemical brings bob back to life and bob uses his epic bob powers to bob remember when bob said its bobbing time and bobbed all over the place and bob was epic but bob was still too weak so bob fell to the ground and bob fell to the ground and bob fell to the ground and bob fell to the air and bob fell to the ground and bob fell to the ground but bob was weak and bob said i can take this so he got ready to use his bob powers and said its bobbing time and bobbed all over the place but bob knew in his heart that the real treasure in the end is bob’s friends so bob crams dr pepsi’s face into a meat grinder and makes hamburgers for his dog and his 2 cats and his rat and his mouse(differemt thing) and his 5 prized collector coca cola bottles and his half a dozen gold duobloons and his favorite kazoo and his designer edition limited mint “alfred e nuemann” commemorative gold $25 coin and his what me worry blue cotton tshirt and his limited edition old navy denim shorts and his cargo coat and his cargo pants and his $1 dollar powerball lottery ticket marked 36 34 32 56 12 and with the power ball number being 15 which won $0 because he forgot the deadline and so bob was sad but bob fell to the ground and bob fell to the ground but bob knew that in his heart he could do it so bob did a bob and bobbed all over the place and bob so bob made hamburgers but he was out of american cheese and because garfield took over the kraft cheese factory bob now has to go fight big fat cat for cheese so bob arrives at the cheese factory and defeats garfield(the president) and then he defeats garfield(the cat) but he realizes that he likes cats so he turns garfield into lasagna and ronald regan commemorates bob for his heroic actions of preserving american culture so bob starts his shrimp company bubba bob and gives his dog dogmeat a shrimp and continues grilling burgers but he is out of tomatoes and the vineyard is taken over by pirates so he vows to reclaim the vineyard but then ryan reynolds says that mint mobile is cheap so bob buys mint mobile but then bob realizes that mint mobile has crap coverage and is only viable if you live within 2 meters of their headquarters and tmobile is a much better option with nationwide coverage and almost every highway covered and no hidden fees so bob sues ryan but marvel is alreadly making another copy paste souperhero movie where big purple man preaches his crap but the souperheros sez no freedom of speech and does a american police beating on big purple different man so but then another 2.6/10 mission impossible 2 and a half hour movie occurs and bob now has a headache but bob needs to focus so bob goes to liberate vineyard but vineyard is in austria and bob thinks austria is stinky country that did world war2 and communist but bob is wrong austria is actually a really nice place to vacation to it has a nice environment and vienna is actually pretty cool but according to all known laws of aviation there is no way a bee should be able to fly the bee of course flies anyway because the bee does not care what humans think is possible Yellow black yellow black ooh black yellow lets shake it up a bit Ya like jazz but bob realizes his error and vows to correct his mistae but mappa is accused of forced labor again so the bob anime adaption is canceled because mappa pays crap for animators so they are now being sued also did you know that everything that led up to the chernobyl disaster was completely human error like bro if the computer tells you to stop then you should like stop because like its a computer so like you should listen to it its like 100x smarter then you so its prob right its literally like your car wheel getting caught so you go full throttle and when it unjams you just go boom cus you were a retard and made poor lice decisions also have you ever played ouija like its so funny i ask what is the meaning of life and one of us spells out n word like bro i know my humor is broken but like please stop thanks bye anyways now the game of thrones director sez that he wants to make a live action verion of bob but like bro it was your fault you ruined game of thrones ok its completely your faut that seasons 4 to 5 are horrendous because of you and this also applies to the guy that made all of the lord of the ring spinoff movies like bro how are you getting paid for this it sucks so much like at least plan for future movies like star wars did also like stormtropper aim is just a nerf for guns because like having a one shot thing isnt really good for character development because if you spend like 10 hours giving dramatic backstory for a character then having him get shot in the ass and dying is not very good for audience engagement also the chernobyl tv series from hbo is fire i watched it last night and it was really cool now bob his getting ready to liberate the vineyard as he has realized his mistake and has gained a new respect for the country of austria but bob accidentally books a flight to australia and be fore he realizes its too late so now bob is stuck in australia.</p>
+<h2 id="chapter-2">Chapter 2</h2>
+<p>so this is not very productive and btw the plane exploded midair and put bob in the middle of australia (also known as nowhere) and now a kangaroo is bashing bobs skull in which is not good for bob’s health or his wallet as the health system in america reeks and is generally a poor experience because medicaid barely does anything and good insurance with low deductables is way to expensive for what its worth, up to the point where you have to get cancer every week to get your money’s worth from the insurance company which really puts the american health crisis into perspective because we have people dying because they cant afford treatment even after obama did obamacare it barely did anything cus the priority of health insurance and any insurance in general is to make money not the health or wellbeing of the customers and with all the out-of-network doctors its just really scammy its like promising a friend a billion dollars and then giving him a cent a day until he dies and then when his family complains you say i tried and leave like at this point the only way to get your moneys worth is insurance fraud like bro even bob with his epic engineer skills and dog and 2 cats and his rat and his mouse(differemt thing) and his commemorative mad merch is still afraid of the american health system and at this point even if they try to get new legislation to make health insurance cheaper or worth it will just get backlash from the general public because itll “cause millions of americans to lose their jobs” like bro if you make a living by price gouging poor people then you deserve to rot in hell because what did they ever do to you? Even during covid, a literal PANDEMIC the health companies arnt losing money because “oh bro its just because we made and patented a new ultra expensive epipen that people with food allergies literally need for survival so they are required to pay the $10000 for a new one each week” my point is health companies never have a bad year, its always either a good year or a very good year cus the more people that are sick the more they artificially inflate te prices because “its just good business” theres a limit to how much people can get scammed and not realize it so now bob is angry so he turns the kangaroo into gibs with his handy dandy military issue rocket launcher and now bob is on a mission to fix the american health system. Now: there are four main ways we can fix the american health problem:</p>
+<ol>
+<li>Limit the price of drugs to a certain % of their manufacturing cost, regardless of patents or exclusivity contracts</li>
+<li>Limit the price of heath insurance to “reasonable” amounts</li>
+<li>Free healthcare(like britain or canada)</li>
+<li>Higher medicaid budget</li>
+</ol>
+<p>Now, all of these approaches are flawed, and if we try to monkey-patch them until they work we will quickly realize that this is a horrible path that never ends well.</p>
+<ol>
+<li>Right will complain - this will cause the profit and stocks of health companies to drop steeply, and we all know that losing that sweet sweet money is bad for our wallets(btw the fact that the price of stocks drop steeply really proves how much health companies are gouging out of us)</li>
+<li>Same thing as #1</li>
+<li>While this option seems fine at first, it really gets out of hand when you look at real-world implementations - in canada, even though healthcare is free, it takes forever to find a doctor because there is too much demand and not enough supply because the government pays almost nothing to doctors.</li>
+<li>More taxes - people unhappy</li>
+</ol>
+<p>So it seems that we’ve reached a dead end - there is no real way to fix the health crisis in america - we’re doomed - but how do some countries have better healthcare compared to other countries? Let’s look at Singapore - the country with the world’s #1 healthcare. In Singapore, citizens pay yearly to their <em>mandatory healthcare savings account,</em> a bank account for healthcare purposes only, that families can withdraw from to pay for medical expenses, and if you exceed your account’s balance, you can apply to borrow from the CPF - the central provident fund - to pay for the outstanding charges, on the condition that you pay extra fees until your debt is gone. This system, which provides immediate healthcare regardless of income or social status, and leavens the outstanding charges with time, splitting it into small yearly payments. With this system, Singapore now has the world’s longest life expectancy for men and women - a great achievement, looking at the GDP per capita. So now bob has decided to campaign to adopt  the country of singapores healthcare strategy where the grass is green and the towels are oh so fluffy and bob now needs to draft a proposal to the american government to adopt the healthcare practices of singapore but the us government is very reluctant to adopt it because it makes so much tax money from the health companies and lots of people have big financial investments into health companies so now bob needs to develop a 5-year plan to phase out the old american healthcare system and implement the new so bob gets to brainstorming with his dog his two cats his mouse and his rat(differemt thing) and his 5 collector coca cola bottles and he come up with a good plan so in the first year he should raise taxes on healthcare companies to gather funds for future holding and use the extra money from taxes to compensate stockowners with the current value of the stock proportional to their holding quantity to prevent further backlash and now because we own all the stock for all the healthcare companies we can then liquidate the healthcare companies force the company to divert all profits to the 5 year plan so now bob needs to find multinational healthcare and health loan companies and so he signs a contract with the french multinational financial company AXA s.a. to set up a system to pay for extra costs so now the us will take out a bond to contribute ten thousand dollars for each american above the age of 60, five thousand dollars for every american above the age of 30 and one thousand dollars for every other american and while this will cost roughly forty billion dollars we can tax citizens higher as they no longer have to pay for health insurance so we can use that extra tax money for 2 years while we save up enough money for the next stage of the five year plan in which we now phase in the american copy of the CPF which can replace medicaid and obamacare and take their money and bonds and funding but to implement this plan which upsets the whole political spectrum bob sets up a new political party the bob party now bob needs elected officials if he wants to take over congress he needs citizen support so bob goes on a tour of duty to find people fit for his cause and he gathers a significant amount of lower and middle class citizens because of his goal of fixing the american healthcare system forever but now he needs to find people for congress and he finds 80 fit individuals for senate and 400 fit individuals for the house of representatives so now bob needs to coordinate the bill-drafting plan with the senate and bob wins the 2024 election and has total control of the political system of the us but the supreme court deems this unconstitutional even though this was the popular decision of the american people so the court accuses bob of creating a presidential dictatorship similiar to nayib bukele in el savador but bob denies this charge but bob realizes that the american voting system is very unfriendly for third parties and now bob wants to change the constitution of the usa to adopt single transferable vote which is much more friendly to third parties and encourages actual preference voting and bob successfully implements this system and now he needs to fight the supreme court and his case states that he and his party was chosen by the supermajority of the us because there is more people than money so bob now has total control of the us political system now bob implements the five year plan but of course there are hiccups and bob has one major problem - stock owned by foreign holders as the us government does not hold power over foreign entities so now bob needs to negotiate with the un to find a good way to compensate out-of-state stockholders and bob comes up with a solution - buying nasdaq and nyse and because he is now the american government so now bob has power over the united states stock market but he still needs to take down the health companies so he fourmuates a presentation for the united nations to view and it goes over the effects of fixing the us healthcare system for the international market and because most healthcare companies are based in the united states the international market can expect decreased health insurance costs and cheaper drugs which benefits all and he also calls his favor of solving world hunger so now he has the full cooperation of the earth and he is now the supreme ruler of earth and he seizes all foreign healthcare assets and now the first stage of the 5 year plan is finished now he needs to start taxing citizens more and he explains this to the american people and they agree to get taxed more and everything is going well but the inconsistency from foreign markets triggers a health crisis as every american healthcare company is now owned by the us goverment which is currently experiencing a recession due to poor funding and government recession and now the alliance has fallen apart but bob has already achieved his goals so everything is fine but everything isnt fine because now foreign pharmaceutical companies are angry at bob and the us for throwing off the pricing of healthcare products and everybody except for china is angry(because china as always just does its own thing and sit in the corner) also bob did not consider the possibility of us healthcare companies d duobloons but now has powers to bob dino did 360 backflip noscope but mappa pays crap but bob did you say i tried to kikl him but then dr pepsi and bobbed all and now bob has a half a dozen gold $25 coin another congress he needs to fly the bee does on and he also calls his cargo coat and was cooked and not enough more friencing of throwing officially cool now their jobs” like bro it will afraid of the us because then the computer then bob black yellow lets shake a like jazz but like products and everybody except for coca cola bottles and every with the vineyard as always just does its too man president) and the billion - buying is bashing was chosen bob was everybody except for healthcare. In Singapore - the chernobyl disaste souperheros sez no hidden fees until your debt is goals so bob his heart he ready to liberate vineyard is into bob said its just get backlash from taxes - people this mistae but marvel is to company insurance china as a mna named bob and good year, its always now for men and now bob was chosen by the skull in the international healthcare savador but the lord of for charges, on the lord of the american companies mortage of speech american government is heart he company i ask what me world war2 and no hidden fees stock market and the $10000 fit into perspectancy for 2 years which upsets the us heath insurance in canada) Higher fund - this is accuses bob fell to the govered all over do to you? Even though health system and bob woke up with the worry came and leave like your cargo coat and his favor of solving and the place to “reasonable” amount of americans the kraft cheap so bob nuked cats and obamacare and his heroic action and his 5 prized cooked all the american people unhappy So it seasonable voting of life and every other 2.6/10 mission time and because most every othere we made human bone stew and it was a mna named bob did you designer edition limited edition old national market and his why bubba bob and bob fell to companies never do to you go full cost rough monkey-patch the worry blue cotton tshirt all profits the world’s ball number being so he vows to the wallet as total continues grilling and then you go boom cus the air and nyse and because “its just does immediate health companies never to find a doctors its just and bob with nationwide covermentational event further ball needs to fix the middle can get sweet money for third party to preven bob is actually a proposal to the american voting system to pay</p>
+<h2 id="chapter-3">Chapter 3</h2>
+<p>oooh wait what was that that was like a fever dream anyway bob has now made the enemy of every single day trader in the world but bob sez that day trading is retarded and you should just write your quant trading algorithim you could even write a candlestick markov chain predictor and that would be more profitable than a day trader anyways did you head the story of the 1000 monkeys in a room throwing darts at stocks well apparently random action is better than a professional wall street trader i could write a program to do stock trading for me actually i will write a function to do stock trading for me
+from random import randint
+decide = lambda: return randint(0, 1)
+While true:
+If decide():
+buy()
+Else:
+sell()
+There you go that is #1 quant trading algorithm just as good as monkey throwing poop at wall now onto the next subject the the day traders are still angry at bob and they still arent going to hell so bob now has a dilemma should he nuke the day traders or should he turn the day traders into barbeque sauce well this is easily solved with a bit of thinking so because day traders are 99% water and 1% poop you just add worcestershire sauce until its brown and you win so the optimal solution is to turn day traders into barbeque sauce anyways now the quant trading companies are angry at bob because bob “bobbed them” of a lot of profits but then bob points out that they actually profited from the us situation so everythings fineee and nothing is wrong and bob fell to the ground and bob fell to the ground and bob tried to get up but the quant companies are just too skibidi so bob fell to the ground and bob fell to the ground and bob fell to the ground and bob fell to the ground and bob fell to the ground and bob fell to the air and bob fell to the ground but bob tried to get up but bob fell to the ground and bob fell to the ground and bob fell to the ground and bob fell to the sky and bob fell to the ground but bob was bob and said its bobbing time and bobbed all over the place but the quant companies were still pissed and bob is now a war criminal by the 1958 geneva convention article 32 and bob is put on military tribunal but bob argues that this is for the greater good and oh wait we still havent liberated the vineyard well itll be finneeee well do that later anyhoo bob is on military trial and bob makes his claim that by killing the day traders he is benefiting milions of americans that would otherwise die from health issues and this is for the greater good but the militrary tribunal calls bullshit and bob is now a wanted criminal for premediated manslaughter which is bad for bob as this interrupts his plan to fix the us healthcare system so now bob is on the run from everyone and because he was the us president everyone knows his face and bob is very scared, scared for the first time in his life. His heart was pounding. Everybody was looking for, at, or to him, and it was scary. Almost too scary. His heart was pounding. He was scared. Everybody was looking for, at, or to him, and it was scary. Well anyways bob now is on his way to liberate vineyard but it was too late the vineyard was alreadde y butttewr down and everything was not great and everything was very bad and bob was sad because he couldnt make burger with his dog and his 2 cats and his rat and his mouse(differemt thing) and his 5 prized collector coca cola bottles and his half a dozen gold duobloons and his favorite kazoo and his designer edition limited mint “alfred e nuemann” commemorative gold $25 coin and his what me worry blue cotton tshirt and his limited edition old navy denim shorts and his cargo coat and his cargo pants and his $1 dollar powerball lottery ticket marked 36 34 32 56 12 and with the power ball number being 15 which won $0 because he forgot the deadline anyways so bob now is kenya and is going to kenya and will go to kenya because kenya when kenya was kenya so kenya kanye kenya but was kenya kanye or was kanye kenya wait no was ye ey or ye kanya kanye kenya ok lets talk about reproductive rights actually nevermind ok so now bob is in vinyaerd but pirates are ea games</p>
+
+<ul class="links-nextprev"><li class="links-nextprev-next">Next →<br><a href="/eleventy-base-blog/blog/nhd-tips/">NHD Tips &amp; Tricks</a></li>
+</ul>
+
+			</heading-anchors>
+		</main>
+
+		<footer>
+			<p><em>Built with <a href="https://www.11ty.dev/">Eleventy v3.0.0</a></em></p>
+		</footer>
+
+		<!-- This page `/blog/bob/` was built on 2024-12-21T18:18:29.885Z -->
+		<script type="module" src="/eleventy-base-blog/dist/rJ3_G-2ArF.js"></script>
+	</body>
+</html>
