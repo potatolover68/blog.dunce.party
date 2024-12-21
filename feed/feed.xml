@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet href="pretty-atom-feed.xsl" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
-  <title>Blog Title</title>
-  <subtitle>This is a longer description about your blog.</subtitle>
-  <link href="https://example.com/eleventy-base-blog/feed/feed.xml" rel="self" />
-  <link href="https://example.com/eleventy-base-blog/" />
+  <title>blog.dunce.party</title>
+  <subtitle>fifteen frogs enjoys being a retard and talking with his retard friends, just like a retard. What im trying to imply is that i am a retard. The end. i code in comic sans(im a sigma)</subtitle>
+  <link href="https://blog.dunce.party/eleventy-base-blog/feed/feed.xml" rel="self" />
+  <link href="https://blog.dunce.party/eleventy-base-blog/" />
   <updated>2024-12-21T00:00:00Z</updated>
-  <id>https://example.com/eleventy-base-blog/</id>
+  <id>https://blog.dunce.party/eleventy-base-blog/</id>
   <author>
-    <name>Your Name</name>
+    <name>potatolover68 aka fifteenfrogs</name>
   </author>
   <entry>
     <title>NHD Tips &amp; Tricks</title>
-    <link href="https://example.com/eleventy-base-blog/blog/nhd-tips/" />
+    <link href="https://blog.dunce.party/eleventy-base-blog/blog/nhd-tips/" />
     <updated>2024-12-21T00:00:00Z</updated>
-    <id>https://example.com/eleventy-base-blog/blog/nhd-tips/</id>
+    <id>https://blog.dunce.party/eleventy-base-blog/blog/nhd-tips/</id>
     <content type="html">&lt;h1 id=&quot;nhd-tips-and-tricks-process-paper&quot;&gt;NHD Tips &amp;amp; Tricks / Process Paper&lt;/h1&gt;
 &lt;hr&gt;
 &lt;p&gt;Nuggets of wisdom I gained working on the NHD Website Builder for the 2024-2025 school year.&lt;/p&gt;
 &lt;h2 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;/h2&gt;
 &lt;hr&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;https://example.com/eleventy-base-blog/blog/nhd-tips/#tech-stack&quot;&gt;Tech Stack&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://example.com/eleventy-base-blog/blog/nhd-tips/#process&quot;&gt;Process&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://example.com/eleventy-base-blog/blog/nhd-tips/#javascript&quot;&gt;Javascript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.dunce.party/eleventy-base-blog/blog/nhd-tips/#tech-stack&quot;&gt;Tech Stack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.dunce.party/eleventy-base-blog/blog/nhd-tips/#process&quot;&gt;Process&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.dunce.party/eleventy-base-blog/blog/nhd-tips/#javascript&quot;&gt;Javascript&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&quot;tech-stack&quot;&gt;Tech Stack&lt;/h2&gt;
 &lt;hr&gt;
@@ -160,9 +160,9 @@ document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span c
   </entry>
   <entry>
     <title>bob</title>
-    <link href="https://example.com/eleventy-base-blog/blog/bob/" />
+    <link href="https://blog.dunce.party/eleventy-base-blog/blog/bob/" />
     <updated>2024-12-21T00:00:00Z</updated>
-    <id>https://example.com/eleventy-base-blog/blog/bob/</id>
+    <id>https://blog.dunce.party/eleventy-base-blog/blog/bob/</id>
     <content type="html">&lt;h1 id=&quot;bob-1&quot;&gt;bob 1&lt;/h1&gt;
 &lt;p&gt;A fantastically mizpelled tale of a mna named bob bob
 “Amazingly bad” - Budget books
