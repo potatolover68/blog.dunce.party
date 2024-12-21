@@ -63,11 +63,11 @@ export default async function(eleventyConfig) {
 		},
 		metadata: {
 			language: "en",
-			title: "Blog Title",
-			subtitle: "This is a longer description about your blog.",
-			base: "https://example.com/",
+			title: "blog.dunce.party",
+			subtitle: "fifteen frogs enjoys being a retard and talking with his retard friends, just like a retard. What im trying to imply is that i am a retard. The end. i code in comic sans(im a sigma)",
+			base: "https://blog.dunce.party/",
 			author: {
-				name: "Your Name"
+				name: "potatolover68 aka fifteenfrogs"
 			}
 		}
 	});
