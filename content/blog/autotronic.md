@@ -1,8 +1,8 @@
 ---
 title: autotronic
 description: CROSSPOST FROM https://github.com/potatolover68/autotronic/blob/main/README.md
-date: "2/13/2025"
-tags: ['cs2', 'coding']
+date: "2025-2-13"
+tags: ["cs2", "coding"]
 ---
 # autotronic.dunce.party
 CROSSPOST FROM https://github.com/potatolover68/autotronic/blob/main/README.md
