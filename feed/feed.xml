@@ -5,11 +5,120 @@
   <subtitle>fifteen frogs enjoys being a retard and talking with his retard friends, just like a retard. What im trying to imply is that i am a retard. The end. i code in comic sans(im a sigma)</subtitle>
   <link href="https://blog.dunce.party/eleventy-base-blog/feed/feed.xml" rel="self" />
   <link href="https://blog.dunce.party/eleventy-base-blog/" />
-  <updated>2024-12-21T00:00:00Z</updated>
+  <updated>2025-02-13T00:00:00Z</updated>
   <id>https://blog.dunce.party/eleventy-base-blog/</id>
   <author>
     <name>potatolover68 aka fifteenfrogs</name>
   </author>
+  <entry>
+    <title>autotronic</title>
+    <link href="https://blog.dunce.party/eleventy-base-blog/blog/autotronic/" />
+    <updated>2025-02-13T00:00:00Z</updated>
+    <id>https://blog.dunce.party/eleventy-base-blog/blog/autotronic/</id>
+    <content type="html">&lt;h1 id=&quot;autotronic-dunce-party&quot;&gt;autotronic.dunce.party&lt;/h1&gt;
+&lt;p&gt;CROSSPOST FROM https://github.com/potatolover68/autotronic/blob/main/README.md&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;so named because the first skin i made was an autotronic karambit&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;An interactive web viewer for CS:GO weapons in the style of a Trading Card.&lt;/p&gt;
+&lt;p&gt;this site&#39;s art is licensed under the &lt;a href=&quot;https://creativecommons.org/licenses/by-nc-sa/4.0/&quot;&gt;CC BY-NC-SA 4.0&lt;/a&gt;
+this sites code uses https://micku7zu.github.io/vanilla-tilt.js/ under the &lt;a href=&quot;https://github.com/micku7zu/vanilla-tilt.js/blob/master/LICENSE&quot;&gt;MIT License&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;the code is under the &lt;a href=&quot;https://www.gnu.org/licenses/agpl-3.0.html&quot;&gt;AGPL v3&lt;/a&gt; license&lt;/p&gt;
+&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Interactive 3D card tilt effect&lt;/li&gt;
+&lt;li&gt;Weapon categorization and filtering&lt;/li&gt;
+&lt;li&gt;Search functionality&lt;/li&gt;
+&lt;li&gt;Compact view mode&lt;/li&gt;
+&lt;li&gt;do not press f pls&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;card-creation-guide&quot;&gt;Card Creation Guide&lt;/h2&gt;
+&lt;h3 id=&quot;tools-required&quot;&gt;Tools Required&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Figma&lt;/li&gt;
+&lt;li&gt;Blender (with csgoitem.blend)&lt;/li&gt;
+&lt;li&gt;Image editing software for upscaling&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;card-creation-process&quot;&gt;Card Creation Process&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Blender Setup&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use csgoitem.blend to render your weapon images&lt;/li&gt;
+&lt;li&gt;weapons are exported with Source2Viewer as a gltf then imported into blender where it is manually lit and exported at high quality&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Figma Layout&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;![screenshot](dev/Screenshot 2025-02-13 173930.png)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create an outer frame of 450x630 pixels&lt;/li&gt;
+&lt;li&gt;Inside this, create Frame 1 at 300x420 pixels&lt;/li&gt;
+&lt;li&gt;Place your rendered weapon image inside the outer frame&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Image Export Process&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Export Frame 1 (300x420)&lt;/li&gt;
+&lt;li&gt;Upscale the exported image by 4x to achieve 1200x1680 final resolution&lt;/li&gt;
+&lt;li&gt;This will be your final card image&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;card-design-specifications&quot;&gt;Card Design Specifications&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Outer Frame&lt;/strong&gt;: Ax630 pixels&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Used as the working area in Figma&lt;/li&gt;
+&lt;li&gt;Contains all design elements&lt;/li&gt;
+&lt;li&gt;A can be anything, as long as the inner frame is centered&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Inner Frame (Frame 1)&lt;/strong&gt;: 300x420 pixels&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Main card design area&lt;/li&gt;
+&lt;li&gt;Will be upscaled 4x for final output&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;adding-new-cards&quot;&gt;Adding New Cards&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Create your card following the process above&lt;/li&gt;
+&lt;li&gt;Add the card information to &lt;code&gt;weapons.json&lt;/code&gt;:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;language-json&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Weapon Name&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;category&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Category&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;image&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./assets/weapon_front.png&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;image-alt&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Weapon Name Front&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;card&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./assets/weapon_card.png&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;card-alt&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Weapon Name Card&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;link&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;optional-steam-market-link&quot;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;development&quot;&gt;Development&lt;/h2&gt;
+&lt;h3 id=&quot;setup&quot;&gt;Setup&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Clone the repository&lt;/li&gt;
+&lt;li&gt;Open &lt;code&gt;index.html&lt;/code&gt; in a modern web browser&lt;/li&gt;
+&lt;li&gt;No build process required - it&#39;s pure HTML, CSS, and JavaScript&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;file-structure&quot;&gt;File Structure&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;index.html&lt;/code&gt; - Main application&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;weapons.json&lt;/code&gt; - Weapon data and card information&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;assets/&lt;/code&gt; - Contains all weapon images and cards
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;fonts/&lt;/code&gt; - IBM Plex Mono font files&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;logo.svg&lt;/code&gt; - dunce.party logo&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;fire.webp&lt;/code&gt;, &lt;code&gt;fire2.webp&lt;/code&gt; - press f do discover whatever this is&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
   <entry>
     <title>NHD Tips &amp; Tricks</title>
     <link href="https://blog.dunce.party/eleventy-base-blog/blog/nhd-tips/" />
