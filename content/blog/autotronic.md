@@ -40,7 +40,7 @@ the code is under the [AGPL v3](https://www.gnu.org/licenses/agpl-3.0.html) lice
 
 2. **Figma Layout**
 
-   ![screenshot](<dev/Screenshot 2025-02-13 173930.png>)
+   ![screenshot](dev/Screenshot 2025-02-13 173930.png)
 
    - Create an outer frame of 450x630 pixels
    - Inside this, create Frame 1 at 300x420 pixels
