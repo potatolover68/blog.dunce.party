@@ -15,6 +15,8 @@ this sites code uses https://micku7zu.github.io/vanilla-tilt.js/ under the [MIT 
 
 the code is under the [AGPL v3](https://www.gnu.org/licenses/agpl-3.0.html) license
 
+csgoitems.blend: https://drive.google.com/file/d/1HVAFL85yoonOeP3hxbas3MG7Wcs3OLJP/view?usp=sharing
+
 ## Features
 
 - Interactive 3D card tilt effect
